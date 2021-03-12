@@ -1,0 +1,28 @@
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+  document.addEventListener('contextmenu', async (event) => {
+    event.preventDefault()
+    console.log('right click')
+    try {
+      await axios.post('/v1/message', { content: 'R' })
+    } catch (error) {
+      console.log(error)
+    }
+    return false
+  })
+
+  document.addEventListener('click', async (event) => {
+    console.log('left click')
+    try {
+      await axios.post('/v1/message', { content: 'L' })
+    } catch (error) {
+      console.log(error)
+    }
+  })
+</script>
+
+<html>
+    this is the page
+</html>
